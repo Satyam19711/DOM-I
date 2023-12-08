@@ -1,0 +1,120 @@
+<!-- 
+Create a mini calculator application, which has following functionalities
+Addition
+Subtraction
+Division
+Multiplication
+Your app should have
+Two input boxes which should take two numbers from the user.
+Four Buttons with following text content
+Add
+Subtract
+Divide
+Multiply
+When user enter 2 and 4 and clicks on multiply button, an alert should come with 8 as ans
+When user enter 8 and 4 and clicks on Divide button,an alert should come with 2 as ans -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiniCalculator</title>
+    <style>
+    body {
+        font-family: system-ui;
+        background: #f06d06;
+        color: white;
+        text-align: center;
+        margin-top: 200px;
+    }
+       
+        
+    </style>
+</head>
+<body>
+
+    <h1>Mini Calculator</h1>
+    <br>
+
+    <div>
+        <input type="number" id="num1" placeholder="enter 1st Number">
+        <input type="number" id="num2" placeholder="enter 2st Number">
+    </div>
+    <br>
+
+    <div>
+        <button id="Add">Add</button>
+        <button id="Subtract">Subtract</button>
+        <button id="Multiply">Multiply</button>
+        <button id="Divide">Divide</button>
+    </div>
+
+</body>
+</html>
+
+<script>
+    document.getElementById("Add").addEventListener("click", function(){
+        calculate("Add")
+    });
+
+    document.getElementById("Subtract").addEventListener("click", function(){
+        calculate("Subtract")
+    });
+
+    document.getElementById("Multiply").addEventListener("click", function(){
+        calculate("Multiply")
+    });
+
+    document.getElementById("Divide").addEventListener("click", function(){
+        calculate("Divide")
+    });
+
+    
+    function calculate(operation){
+        let num1 = parseFloat(document.getElementById("num1").value);
+        let num2 = parseFloat(document.getElementById("num2").value);
+
+        let result;
+
+        switch (operation){
+            case "Add":
+                result= num1 + num2;
+                break;
+
+            case "Subtract":
+                result= num1 - num2;
+                break;
+                
+            case "Multiply":
+                result= num1*num2;
+                break;
+
+            case "Divide":
+                if (num2 !== 0) {
+                result = num1 / num2;
+                } 
+                else {
+                alert("Cannot divide by zero!");
+                return;
+                }
+                break;
+
+            default:
+                break;
+            }
+
+            if(!isNaN(result)){
+                alert("Result: " + result);
+            }
+        }
+
+
+
+
+    
+
+
+
+</script>
